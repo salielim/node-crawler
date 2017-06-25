@@ -5,6 +5,10 @@ app.use(
     express.static(__dirname + "/public")
 );
 
+app.use(
+    express.static(__dirname + "/bower_components")
+);
+
 app.use("/index.html", function(req, res) {
     res.status(200);
     res.type("text/html");
