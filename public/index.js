@@ -1,15 +1,19 @@
-(function() {
-    var MyApp = angular.module("MyApp", []);
+(function () {
+    var SeobotApp = angular.module("SeobotApp", []);
 
-    var MyCtrl = function() {
-        var myCtrl = this;
+    var SeobotCtrl = function () {
+        var seobotCtrl = this;
 
-        myCtrl.name = "";
-        myCtrl.email = "";
-        myCtrl.submit = function() {
-               console.log("processing form for " + myCtrl.name);
-         }
+        seobotCtrl.url = "";
+        seobotCtrl.title = "";
+        seobotCtrl.metaDescription = "";
+        seobotCtrl.h1 = "";
+        seobotCtrl.h2 = "";
+
+        seobotCtrl.crawl = function () {
+            console.log("Performing crawl for " + seobotCtrl.url);
+        }
     };
 
-    MyApp.controller("MyCtrl", MyCtrl);
+    SeobotApp.controller("SeobotCtrl", SeobotCtrl);
 })();

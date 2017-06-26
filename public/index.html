@@ -1,74 +1,89 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="seobotApp">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">   
-    <link rel="stylesheet" href="/css/style.scss"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/style.scss">
 
-    <script src="/angular/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 
-    <script src="/index.js"></script>
-    
-    <title>SEOBot - On-Site SEO Management Tool</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- <script src="/angular/angular.min.js"></script>
+
+  <script src="/index.js"></script> -->
+
+  <title>SEOBot - On-Site SEO Management Tool</title>
 </head>
 
-<body ng-controller="SeobotCtrl as seobotCtrl">
-        <div class="container">
+<body>
+  <div class="container">
 
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+            aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">SEOBot</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Product</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./"><b>Try SEOBot for Business</b><span class="sr-only">(current)</span></a></li>
-              <li><a href="../navbar-static-top/">Log in</a></li>
-              <li><a href="../navbar-fixed-top/">Log Out</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>SEOBot</h1>
-        <h2>A better way to monitor onsite SEO</h2> 
-        <p>The tool automates the monitoring of each and every webpage on a website. With a click of the button, the tool crawls every webpage and saves the title, headings, meta description and other important elements of the webpage in a database. This can also be done with as a weekly cron job. With this tool, businesses performing SEO on their site can view and monitor information about each webpage on their site at a glance.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Get started for free &raquo;</a>
-        </p>
+          <a class="navbar-brand" href="/">SEOBot</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Product</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./"><b>Try SEOBot for Business</b><span class="sr-only">(current)</span></a></li>
+            <li><a href="../navbar-static-top/">Log in</a></li>
+            <li><a href="../navbar-fixed-top/">Log Out</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
       </div>
+      <!--/.container-fluid -->
+    </nav>
 
-    </div> <!-- /container -->
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1>SEOBot</h1>
+      <h2>A better way to monitor onsite SEO</h2>
+      <p>The tool automates the monitoring of each and every webpage on a website. With a click of the button, the tool crawls
+        every webpage and saves the title, headings, meta description and other important elements of the webpage in a database.
+        This can also be done with as a weekly cron job. With this tool, businesses performing SEO on their site can view
+        and monitor information about each webpage on their site at a glance.</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Get started for free &raquo;</a>
+      </p>
+    </div>
+
+  </div>
+  <!-- /container -->
 </body>
+
 </html>

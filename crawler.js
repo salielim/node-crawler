@@ -7,11 +7,18 @@ var c = new Crawler({
             console.log(error);
         } else {
             var $ = res.$; // $ is Cheerio by default
-            console.log("URL: " + res.request.uri.href);
-            console.log("Title: " + $("title").text());
-            console.log("Meta Description: " + $("meta[name='description']").attr('content'));
-            console.log("H1: " + $("h1").text());
-            console.log("H2: " + $("h2").text());
+
+            var url = res.request.uri.href;
+            var title = $("title").text();
+            var metaDescription = $("meta[name='description']").attr('content');
+            var h1 = $("h1").text();
+            var h2 = $("h2").text();
+
+            console.log("URL: " + url);
+            console.log("Title: " + title);
+            console.log("Meta Description: " + metaDescription);
+            console.log("H1: " + h1);
+            console.log("H2: " + h2);
             console.log("---------");
         }
 
