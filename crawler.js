@@ -1,9 +1,9 @@
 var Scanner = require("crawler");
 
 var c = new Scanner({
-    maxConnections : 10,
-    callback : function (error, res, done) {
-        if(error){
+    maxConnections: 10,
+    callback: function (error, res, done) {
+        if (error) {
             console.log(error);
         } else {
             var $ = res.$; // $ is Cheerio by default
@@ -16,6 +16,12 @@ var c = new Scanner({
             var h1 = $("h1").text();
             var h2 = $("h2").text();
 
+            imgArr = [];
+            $("img").each(function (index, img) {
+                imgAlt = $(img).attr("alt");
+                imgArr.push(imgAlt);
+            });
+
             console.log("URL: " + url);
             console.log("Title: " + title);
             console.log("Meta Description: " + metaDescription);
@@ -23,14 +29,15 @@ var c = new Scanner({
             console.log("OG Description: " + ogDescription);
             console.log("H1: " + h1);
             console.log("H2: " + h2);
+            console.log("imgAlt: " + imgArr);
             console.log("---------");
         }
 
         var httpReg = new RegExp(/http|www/);
         var symbReg = new RegExp(/#|%|\?|:|%/);
-        $("a").each(function(index,a) {
+        $("a").each(function (index, a) {
             var hrefAttr = $(a).attr('href');
-            if (hrefAttr==undefined) {
+            if (hrefAttr == undefined) {
                 // if ahref value is undefined, skip it
                 //console.log("undefined URL slug");
             } else if (hrefAttr.match(symbReg)) {
@@ -41,7 +48,7 @@ var c = new Scanner({
                 //console.log("full url: " + hrefAttr);
                 var fullUrl = domainName;
                 if (!urlArr.includes(fullUrl)) { // if URL is not already in crawl queue
-                    urlArr.push(fullUrl); 
+                    urlArr.push(fullUrl);
                     c.queue(fullUrl);
                 }
             } else {
@@ -49,7 +56,7 @@ var c = new Scanner({
                 //console.log("slug only: " + domainName + hrefAttr);
                 var fullUrl = domainName + hrefAttr;
                 if (!urlArr.includes(fullUrl)) { // if URL is not already in crawl queue
-                    urlArr.push(fullUrl); 
+                    urlArr.push(fullUrl);
                     c.queue(fullUrl);
                 }
             }
