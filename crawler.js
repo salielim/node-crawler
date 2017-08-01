@@ -65,6 +65,10 @@ var c = new Scanner({
     }
 });
 
+c.on('drain', function() {
+    console.log("scan is completed");
+})
+
 domainName = "https://en.wikipedia.org";
 urlArr = [domainName];
 c.queue(urlArr);
